@@ -1,11 +1,11 @@
 
 # Andreas "anti" Neukoetter
 
-I am Andreas, but friends call me Anti.
-I am a fulltime game developer.
-I currently work as the CTO of ...
-In my day job I mostly spend my time between meetings/calls, and spreadsheets.
-In my spare time I love to code.
+I am Andreas, but friends call me Anti.  
+I am a fulltime game developer.  
+I currently work as the CTO of ...  
+In my day job I mostly spend my time between meetings/calls, and spreadsheets.  
+In my spare time I love to code.  
 
 ## Repo Stats
 - **26 repos with commits in the last two years**
@@ -49,8 +49,8 @@ This excludes archived, disabled, empty, and private repos.
 - C#: 3%, 26.3 KB
 - Shell: 2%, 11.6 KB
 - Objective-C++: 2%, 15.9 KB
-- Objective-C: 1%, 9.4 KB
 - HLSL: 1%, 8.9 KB
+- Objective-C: 1%, 9.4 KB
 
 
 ## All-Time Language Stats
@@ -58,8 +58,8 @@ This excludes archived, disabled, empty, and private repos.
 - C: 16%, 149.7 KB
 - ShaderLab: 7%, 63.1 KB
 - C#: 3%, 26.3 KB
-- Objective-C++: 2%, 15.9 KB
 - CSS: 2%, 16.4 KB
-- Objective-C: 1%, 9.4 KB
+- Objective-C++: 2%, 15.9 KB
 - Shell: 1%, 13.4 KB
+- Objective-C: 1%, 9.4 KB
 
