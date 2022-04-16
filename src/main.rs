@@ -90,11 +90,11 @@ struct Context<'a> {
 const README_TEMPLATE: &str = r#"
 # Andreas "anti" Neukoetter
 
-I am Andreas, but friends call me Anti.
-I am a fulltime game developer.
-I currently work as the CTO of ...
-In my day job I mostly spend my time between meetings/calls, and spreadsheets.
-In my spare time I love to code.
+I am Andreas, but friends call me Anti.  
+I am a fulltime game developer.  
+I currently work as the CTO of ...  
+In my day job I mostly spend my time between meetings/calls, and spreadsheets.  
+In my spare time I love to code.  
 
 ## Repo Stats
 - **{user_and_repo_stats.live_repos} repos with commits in the last two years**
