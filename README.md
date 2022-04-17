@@ -16,11 +16,11 @@ This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
 - [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-04-16
+- [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2022-04-16
 - [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) on 2022-04-16
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2022-04-16
 - [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2022-04-15
 - [AndreasOM/cheval](https://github.com/AndreasOM/cheval) on 2022-04-14
-- [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2022-04-12
 - [AndreasOM/cheval-example-configs](https://github.com/AndreasOM/cheval-example-configs) on 2022-04-09
 - [AndreasOM/expresso](https://github.com/AndreasOM/expresso) on 2022-03-01
 - [AndreasOM/omr-bumper](https://github.com/AndreasOM/omr-bumper) on 2022-02-24
@@ -47,8 +47,8 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 80%, 608.5 KB
 - ShaderLab: 8%, 63.1 KB
 - C#: 3%, 26.3 KB
-- Shell: 2%, 11.6 KB
 - Objective-C++: 2%, 15.9 KB
+- Shell: 2%, 11.6 KB
 - HLSL: 1%, 8.9 KB
 - Objective-C: 1%, 9.4 KB
 
