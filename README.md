@@ -15,8 +15,8 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-04-17
-- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) on 2022-04-17
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-04-18
+- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) on 2022-04-18
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2022-04-17
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2022-04-16
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2022-04-16
@@ -44,10 +44,10 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- Rust: 80%, 608.5 KB
+- Rust: 79%, 608.5 KB
 - ShaderLab: 8%, 63.1 KB
 - C#: 3%, 26.3 KB
-- Shell: 2%, 12.7 KB
+- Shell: 2%, 15 KB
 - Objective-C++: 2%, 15.9 KB
 - Objective-C: 1%, 9.4 KB
 - HLSL: 1%, 8.9 KB
@@ -58,8 +58,8 @@ This excludes archived, disabled, empty, and private repos.
 - C: 16%, 149.7 KB
 - ShaderLab: 7%, 63.1 KB
 - C#: 3%, 26.3 KB
+- Shell: 2%, 16.9 KB
 - Objective-C++: 2%, 15.9 KB
-- Shell: 2%, 14.6 KB
 - CSS: 2%, 16.4 KB
 - Objective-C: 1%, 9.4 KB
 
