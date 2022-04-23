@@ -8,14 +8,14 @@ In my day job I mostly spend my time between meetings/calls, and spreadsheets.
 In my spare time I love to code.  
 
 ## Repo Stats
-- **26 repos with commits in the last two years**
+- **24 repos with commits in the last two years**
 - 65 total repos
   - 20 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-04-21
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-04-22
 - [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) on 2022-04-19
 - [AndreasOM/omr-bumper-test](https://github.com/AndreasOM/omr-bumper-test) on 2022-04-19
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2022-04-17
@@ -38,19 +38,15 @@ This excludes archived, disabled, empty, and private repos.
 ## Most Forked
 - [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) - 0 forks
 - [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) - 0 forks
-- [AndreasOM/anti666-random-experiments](https://github.com/AndreasOM/anti666-random-experiments) - 0 forks
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) - 0 forks
 - [AndreasOM/automatic-octo-guacamole](https://github.com/AndreasOM/automatic-octo-guacamole) - 0 forks
+- [AndreasOM/bluelu](https://github.com/AndreasOM/bluelu) - 0 forks
 
 
 ## Past Two Years Language Stats
-- Rust: 79%, 608.5 KB
-- ShaderLab: 8%, 63.1 KB
-- C#: 3%, 26.3 KB
-- Shell: 2%, 15 KB
+- Rust: 93%, 608.5 KB
+- Shell: 2%, 14.1 KB
 - Objective-C++: 2%, 15.9 KB
-- Objective-C: 1%, 9.4 KB
-- HLSL: 1%, 8.9 KB
 
 
 ## All-Time Language Stats
