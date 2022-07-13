@@ -15,9 +15,9 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-07-11
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-07-12
+- [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2022-07-12
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2022-07-09
-- [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2022-07-05
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2022-06-28
 - [AndreasOM/oml-game](https://github.com/AndreasOM/oml-game) on 2022-06-28
 - [AndreasOM/rar-rs](https://github.com/AndreasOM/rar-rs) on 2022-06-23
@@ -44,13 +44,13 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- Rust: 95%, 636.1 KB
+- Rust: 95%, 637.7 KB
 - GLSL: 2%, 11.8 KB
 - Shell: 2%, 14.1 KB
 
 
 ## All-Time Language Stats
-- Rust: 65%, 636.1 KB
+- Rust: 65%, 637.7 KB
 - C: 15%, 149.7 KB
 - ShaderLab: 6%, 63.1 KB
 - C#: 3%, 26.3 KB
