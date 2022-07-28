@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-07-26
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-07-27
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2022-07-22
 - [AndreasOM/omr-bumper](https://github.com/AndreasOM/omr-bumper) on 2022-07-22
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2022-07-22
@@ -29,8 +29,8 @@ This excludes archived, disabled, empty, and private repos.
 
 ## Most Starred
 - [AndreasOM/cheval](https://github.com/AndreasOM/cheval) - 3 stars
-- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) - 3 stars
 - [AndreasOM/expresso](https://github.com/AndreasOM/expresso) - 2 stars
+- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) - 2 stars
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) - 2 stars
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) - 2 stars
 
@@ -45,8 +45,8 @@ This excludes archived, disabled, empty, and private repos.
 
 ## Past Two Years Language Stats
 - Rust: 95%, 642.6 KB
-- GLSL: 2%, 11.9 KB
 - Shell: 2%, 14.1 KB
+- GLSL: 2%, 11.9 KB
 
 
 ## All-Time Language Stats
@@ -54,8 +54,8 @@ This excludes archived, disabled, empty, and private repos.
 - C: 15%, 149.7 KB
 - ShaderLab: 6%, 63.1 KB
 - C#: 3%, 26.3 KB
+- Objective-C++: 2%, 15.9 KB
 - Shell: 2%, 16.9 KB
 - CSS: 2%, 16.4 KB
-- Objective-C++: 2%, 15.9 KB
 - GLSL: 1%, 11.9 KB
 
