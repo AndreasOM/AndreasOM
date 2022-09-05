@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-09-03
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-09-04
 - [AndreasOM/oml-game](https://github.com/AndreasOM/oml-game) on 2022-09-01
 - [AndreasOM/rar-rs](https://github.com/AndreasOM/rar-rs) on 2022-09-01
 - [AndreasOM/many-cord-pass](https://github.com/AndreasOM/many-cord-pass) on 2022-08-31
@@ -45,8 +45,8 @@ This excludes archived, disabled, empty, and private repos.
 
 ## Past Two Years Language Stats
 - Rust: 95%, 680.4 KB
-- Shell: 2%, 14.1 KB
 - GLSL: 2%, 14.1 KB
+- Shell: 2%, 14.1 KB
 
 
 ## All-Time Language Stats
