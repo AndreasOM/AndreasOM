@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-09-04
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-09-05
 - [AndreasOM/oml-game](https://github.com/AndreasOM/oml-game) on 2022-09-01
 - [AndreasOM/rar-rs](https://github.com/AndreasOM/rar-rs) on 2022-09-01
 - [AndreasOM/many-cord-pass](https://github.com/AndreasOM/many-cord-pass) on 2022-08-31
@@ -55,7 +55,7 @@ This excludes archived, disabled, empty, and private repos.
 - ShaderLab: 6%, 63.1 KB
 - C#: 3%, 26.3 KB
 - Objective-C++: 2%, 15.9 KB
-- Shell: 2%, 16.9 KB
 - CSS: 2%, 16.4 KB
+- Shell: 2%, 16.9 KB
 - GLSL: 1%, 14.1 KB
 
