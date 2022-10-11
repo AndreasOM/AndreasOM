@@ -8,14 +8,15 @@ In my day job I mostly spend my time between meetings/calls, and spreadsheets.
 In my spare time I love to code.  
 
 ## Repo Stats
-- **25 repos with commits in the last two years**
-- 69 total repos
+- **26 repos with commits in the last two years**
+- 70 total repos
   - 22 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-10-09
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-10-10
+- [AndreasOM/fake-vice-bin](https://github.com/AndreasOM/fake-vice-bin) on 2022-10-10
 - [AndreasOM/many-cord-pass](https://github.com/AndreasOM/many-cord-pass) on 2022-09-30
 - [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2022-09-27
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2022-09-22
@@ -24,7 +25,6 @@ This excludes archived, disabled, empty, and private repos.
 - [AndreasOM/cheval](https://github.com/AndreasOM/cheval) on 2022-08-29
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2022-08-27
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2022-08-27
-- [AndreasOM/preroller](https://github.com/AndreasOM/preroller) on 2022-08-17
 
 
 ## Most Starred
@@ -53,8 +53,8 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 69%, 750.2 KB
 - C: 14%, 149.7 KB
 - ShaderLab: 6%, 63.1 KB
-- CSS: 2%, 16.4 KB
 - Shell: 2%, 16.9 KB
+- CSS: 2%, 16.4 KB
 - C#: 2%, 26.3 KB
 - Objective-C++: 1%, 15.9 KB
 - GLSL: 1%, 14.1 KB
