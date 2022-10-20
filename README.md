@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-10-18
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2022-10-19
 - [AndreasOM/fake-vice-bin](https://github.com/AndreasOM/fake-vice-bin) on 2022-10-17
 - [AndreasOM/many-cord-pass](https://github.com/AndreasOM/many-cord-pass) on 2022-09-30
 - [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2022-09-27
@@ -53,9 +53,9 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 69%, 750.2 KB
 - C: 14%, 149.7 KB
 - ShaderLab: 6%, 63.1 KB
+- C#: 2%, 26.3 KB
 - CSS: 2%, 16.4 KB
 - Shell: 2%, 16.9 KB
-- C#: 2%, 26.3 KB
 - Objective-C++: 1%, 15.9 KB
 - GLSL: 1%, 14.1 KB
 
