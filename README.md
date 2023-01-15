@@ -15,8 +15,8 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2023-01-13
-- [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2023-01-10
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2023-01-14
+- [AndreasOM/anti666-cheval](https://github.com/AndreasOM/anti666-cheval) on 2023-01-14
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2022-12-06
 - [AndreasOM/many-cord-pass](https://github.com/AndreasOM/many-cord-pass) on 2022-11-03
 - [AndreasOM/fake-vice-bin](https://github.com/AndreasOM/fake-vice-bin) on 2022-10-17
@@ -44,18 +44,18 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- Rust: 95%, 949.8 KB
+- Rust: 95%, 957.7 KB
 - Shell: 3%, 28.1 KB
 - GLSL: 1%, 14.1 KB
 
 
 ## All-Time Language Stats
-- Rust: 73%, 958.4 KB
+- Rust: 73%, 966.2 KB
 - C: 11%, 149.7 KB
 - ShaderLab: 5%, 63.1 KB
-- Shell: 2%, 31 KB
 - C#: 2%, 26.3 KB
+- Shell: 2%, 31 KB
+- GLSL: 1%, 14.1 KB
 - CSS: 1%, 16.4 KB
 - Objective-C++: 1%, 15.9 KB
-- GLSL: 1%, 14.1 KB
 
