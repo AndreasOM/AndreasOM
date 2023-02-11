@@ -8,14 +8,14 @@ In my day job I mostly spend my time between meetings/calls, and spreadsheets.
 In my spare time I love to code.  
 
 ## Repo Stats
-- **26 repos with commits in the last two years**
+- **25 repos with commits in the last two years**
 - 73 total repos
   - 23 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2023-02-09
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2023-02-10
 - [AndreasOM/literate-octo-pancake](https://github.com/AndreasOM/literate-octo-pancake) on 2023-02-09
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2023-01-31
 - [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) on 2023-01-31
@@ -53,8 +53,8 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 72%, 939.1 KB
 - C: 11%, 149.7 KB
 - ShaderLab: 5%, 63.1 KB
-- C#: 2%, 26.3 KB
 - Shell: 2%, 32.5 KB
+- C#: 2%, 26.3 KB
 - GLSL: 1%, 14.1 KB
 - Objective-C++: 1%, 15.9 KB
 - CSS: 1%, 16.4 KB
