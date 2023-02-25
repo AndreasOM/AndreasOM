@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2023-02-23
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2023-02-24
 - [AndreasOM/literate-octo-pancake](https://github.com/AndreasOM/literate-octo-pancake) on 2023-02-11
 - [AndreasOM/anti666tv](https://github.com/AndreasOM/anti666tv) on 2023-01-31
 - [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) on 2023-01-31
@@ -56,6 +56,6 @@ This excludes archived, disabled, empty, and private repos.
 - C#: 2%, 26.3 KB
 - Shell: 2%, 32.5 KB
 - Objective-C++: 1%, 15.9 KB
-- CSS: 1%, 16.4 KB
 - GLSL: 1%, 14.1 KB
+- CSS: 1%, 16.4 KB
 
