@@ -27,7 +27,7 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## All-Time Language Stats
-- Rust: 76%, 1.2 MB
+- Rust: 77%, 1.2 MB
 - C: 9%, 149.7 KB
 - ShaderLab: 4%, 63.1 KB
 - Shell: 2%, 33 KB
