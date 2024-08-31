@@ -9,7 +9,7 @@ In my spare time I love to code.
 
 ## Repo Stats
 - **0 repos with commits in the last two years**
-- 84 total repos
+- 85 total repos
   - 24 are forks
 
 This excludes archived, disabled, empty, and private repos.
@@ -30,7 +30,7 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 77%, 1.2 MB
 - C: 9%, 149.7 KB
 - ShaderLab: 4%, 63.1 KB
-- C#: 2%, 26.3 KB
 - Shell: 2%, 33 KB
+- C#: 2%, 26.3 KB
 - CSS: 1%, 16.4 KB
 
