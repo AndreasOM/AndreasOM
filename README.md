@@ -33,4 +33,5 @@ This excludes archived, disabled, empty, and private repos.
 - C#: 6%, 105.5 KB
 - GDScript: 3%, 54.7 KB
 - Shell: 2%, 33 KB
+- HLSL: 1%, 22.5 KB
 
