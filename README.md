@@ -9,7 +9,7 @@ In my spare time I love to code.
 
 ## Repo Stats
 - **0 repos with commits in the last two years**
-- 85 total repos
+- 86 total repos
   - 24 are forks
 
 This excludes archived, disabled, empty, and private repos.
@@ -28,8 +28,8 @@ This excludes archived, disabled, empty, and private repos.
 
 ## All-Time Language Stats
 - Rust: 66%, 1.3 MB
-- C: 8%, 149.7 KB
 - ShaderLab: 8%, 159.5 KB
+- C: 8%, 149.7 KB
 - C#: 6%, 115.1 KB
 - GDScript: 5%, 90.5 KB
 - Shell: 2%, 33 KB
