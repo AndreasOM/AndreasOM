@@ -30,8 +30,8 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 65%, 1.3 MB
 - ShaderLab: 8%, 159.5 KB
 - C: 7%, 149.7 KB
+- GDScript: 6%, 113.6 KB
 - C#: 6%, 115.1 KB
-- GDScript: 5%, 109.4 KB
 - Shell: 2%, 33 KB
 - HLSL: 1%, 28.4 KB
 
