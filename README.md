@@ -28,7 +28,7 @@ This excludes archived, disabled, empty, and private repos.
 
 ## All-Time Language Stats
 - Rust: 54%, 1.3 MB
-- GDScript: 21%, 509.3 KB
+- GDScript: 21%, 511.8 KB
 - ShaderLab: 7%, 159.5 KB
 - C: 6%, 149.7 KB
 - C#: 5%, 115.1 KB
