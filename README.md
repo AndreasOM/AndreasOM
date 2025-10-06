@@ -9,8 +9,8 @@ In my spare time I love to code.
 
 ## Repo Stats
 - **0 repos with commits in the last two years**
-- 91 total repos
-  - 25 are forks
+- 92 total repos
+  - 26 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
