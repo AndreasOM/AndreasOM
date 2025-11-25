@@ -187,13 +187,18 @@ async fn main() -> Result<()> {
 async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
     let mut stats = UserAndRepoStats::default();
     let mut after = None;
-    tracing::info!("Getting user repos");
+    tracing::info!("Getting user repos for login: {}", MY_LOGIN);
     loop {
         let vars = user_repos_query::Variables {
             login: MY_LOGIN.to_string(),
             after,
         };
-        let resp = post_graphql::<UserReposQuery, _>(client, API_URL, vars).await?;
+        tracing::debug!("Making GraphQL request to {} for user {}", API_URL, MY_LOGIN);
+        let resp = post_graphql::<UserReposQuery, _>(client, API_URL, vars).await
+            .map_err(|e| {
+                tracing::error!("GraphQL request failed: {}", e);
+                anyhow::anyhow!("Failed to fetch user repos: {}", e)
+            })?;
         tracing::debug!("{resp:#?}");
 
         let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in GraphQL response"))?;
