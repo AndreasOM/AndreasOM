@@ -16,7 +16,7 @@ use human_bytes::human_bytes;
 use itertools::Itertools;
 use once_cell::sync::Lazy;
 use reqwest::Client;
-use serde_derive::Serialize;
+use serde::Serialize;
 use serde_json;
 use std::{cmp::Ordering, collections::HashMap, env, fs::File, io::Write, path::PathBuf};
 use tinytemplate::TinyTemplate;
