@@ -254,7 +254,14 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
         let resp = graphql_with_retry::<UserReposQuery>(client, API_URL, vars).await?;
         tracing::debug!("{resp:#?}");
 
+        if resp.data.is_none() {
+            tracing::error!("No data in GraphQL response. Full response: {:#?}", resp);
+        }
         let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in GraphQL response"))?;
+
+        if data.user.is_none() {
+            tracing::error!("No user in GraphQL response");
+        }
         let user = data.user.ok_or_else(|| anyhow::anyhow!("No user in GraphQL response"))?;
 
         if stats.created_at.is_empty() {
@@ -527,6 +534,9 @@ async fn issue_and_pr_stats(client: &Client) -> Result<IssueAndPrStats> {
     .await?;
     tracing::debug!("{resp:#?}");
 
+    if resp.data.is_none() {
+        tracing::error!("No data in issues/PRs GraphQL response. Full response: {:#?}", resp);
+    }
     let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in issues/PRs GraphQL response"))?;
     Ok(IssueAndPrStats {
         issues_created: data.issues_created.issue_count,
