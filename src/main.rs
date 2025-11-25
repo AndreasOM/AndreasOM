@@ -11,7 +11,6 @@ use chrono::{DateTime, Datelike, Utc};
 use github_queries::{
     issues_and_prs_query, user_repos_query, IssuesAndPrsQuery, UserReposQuery,
 };
-use graphql_client::reqwest::post_graphql;
 use human_bytes::human_bytes;
 use itertools::Itertools;
 use once_cell::sync::Lazy;
@@ -514,7 +513,7 @@ where
         .collect::<Vec<_>>()
 }
 
-fn top_languages(languages: &HashMap<String, (String, i64)>) -> Vec<LanguageStat> {
+fn top_languages(languages: &HashMap<String, (String, i64)>) -> Vec<LanguageStat<'_>> {
     let total_size: i64 = languages.values().map(|v| v.1).sum();
     let colors: HashMap<&str, &str> = languages
         .iter()
