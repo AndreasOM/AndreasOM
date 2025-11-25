@@ -446,7 +446,12 @@ fn language_color<'a, 'b>(lang: &'a str, color: Option<&'b str>) -> &'b str {
 }
 
 fn top_repos(repos: &[MyRepo]) -> TopRepos<'_> {
-    let most_forked = top_n(repos, TOP_FORKED_REPOS, |a, b| b.fork_count.cmp(&a.fork_count));
+    let most_forked = repos
+        .iter()
+        .filter(|r| r.fork_count > 0)
+        .sorted_by(|a, b| b.fork_count.cmp(&a.fork_count))
+        .take(TOP_FORKED_REPOS)
+        .collect::<Vec<_>>();
     let most_starred = top_n(repos, TOP_STARRED_REPOS, |a, b| b.stargazer_count.cmp(&a.stargazer_count));
     let most_recent = top_n(repos, TOP_RECENT_REPOS, |a, b| b.pushed_date.cmp(&a.pushed_date));
     TopRepos {
