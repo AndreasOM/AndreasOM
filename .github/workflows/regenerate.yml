@@ -33,12 +33,18 @@ jobs:
           git config --global user.email "murderbot@example.com"
           git config --global user.name "Murderbot"
 
-      - name: Run generator and commit changes
+      - name: Run generator
         run: |
           set -e
           set -x
           RUST_LOG=info GITHUB_TOKEN=${{ github.token }} ./target/debug/generator
-          if [[ $(git status --porcelain) ]]; then
-              git commit -a -m 'Regenerated profile README.md'
+
+      - name: Commit changes
+        run: |
+          set -e
+          set -x
+          if [[ -n $(git status --porcelain README.md) ]]; then
+              git add README.md
+              git commit -m 'Regenerated profile README.md'
               git push
           fi
