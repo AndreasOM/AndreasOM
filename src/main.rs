@@ -25,6 +25,17 @@ const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 const MY_LOGIN: &str = "AndreasOM";
 
+// Repository listing configuration
+const TOP_STARRED_REPOS: usize = 5;
+const TOP_FORKED_REPOS: usize = 5;
+const TOP_RECENT_REPOS: usize = 10;
+
+// Language statistics configuration
+const MIN_LANGUAGE_PERCENTAGE: f64 = 1.0;
+
+// API rate limiting configuration
+const PAGINATION_DELAY_MS: u64 = 200;
+
 #[derive(Debug, Serialize)]
 struct MyRepo {
     full_name: String,
@@ -301,7 +312,7 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
         if user.repositories.page_info.has_next_page {
             after = user.repositories.page_info.end_cursor;
             // Small delay between paginated requests to avoid rate limiting
-            tokio::time::sleep(tokio::time::Duration::from_millis(200)).await;
+            tokio::time::sleep(tokio::time::Duration::from_millis(PAGINATION_DELAY_MS)).await;
         } else {
             break;
         }
@@ -482,9 +493,9 @@ fn language_color<'a, 'b>(lang: &'a str, color: Option<&'b str>) -> &'b str {
 }
 
 fn top_repos(repos: &[MyRepo]) -> TopRepos<'_> {
-    let most_forked = top_n(repos, 5, |a, b| b.fork_count.cmp(&a.fork_count));
-    let most_starred = top_n(repos, 5, |a, b| b.stargazer_count.cmp(&a.stargazer_count));
-    let most_recent = top_n(repos, 10, |a, b| b.pushed_date.cmp(&a.pushed_date));
+    let most_forked = top_n(repos, TOP_FORKED_REPOS, |a, b| b.fork_count.cmp(&a.fork_count));
+    let most_starred = top_n(repos, TOP_STARRED_REPOS, |a, b| b.stargazer_count.cmp(&a.stargazer_count));
+    let most_recent = top_n(repos, TOP_RECENT_REPOS, |a, b| b.pushed_date.cmp(&a.pushed_date));
     TopRepos {
         most_forked,
         most_recent,
@@ -522,7 +533,7 @@ fn top_languages(languages: &HashMap<String, (String, i64)>) -> Vec<LanguageStat
     let mut top = vec![];
     for (name, sum) in language_sums {
         let pct = (sum as f64 / total_size as f64) * 100.0;
-        if pct < 1.0 {
+        if pct < MIN_LANGUAGE_PERCENTAGE {
             tracing::debug!("Skipping language {name} with total percentage of {pct}");
             continue;
         }
