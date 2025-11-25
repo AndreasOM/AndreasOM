@@ -3,41 +3,42 @@ name: Regenerate profile README.md
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: "33 4 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     environment: "Profile regeneration"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
       - name: Cache cargo & target directories
-        uses: Swatinem/rust-cache@v1
-      - name: Install toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: default
-          toolchain: stable
-          override: true
-      - name: Run cargo build
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build generator
+        run: cargo build
+
       - name: Configure Git
         run: |
           git config --global user.email "murderbot@example.com"
           git config --global user.name "Murderbot"
-      - name: Commit and push if changed
+
+      - name: Run generator and commit changes
         run: |
           set -e
           set -x
-          RUST_LOG=info GITHUB_TOKEN=${{ github.token }} LAST_FM_API_KEY=${{ secrets.LAST_FM_API_KEY }} ./target/debug/generator
-          if [[ `git status --porcelain` ]]; then
+          RUST_LOG=info GITHUB_TOKEN=${{ github.token }} ./target/debug/generator
+          if [[ $(git status --porcelain) ]]; then
               git commit -a -m 'Regenerated profile README.md'
               git push
           fi
-
-
