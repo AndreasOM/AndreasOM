@@ -141,11 +141,12 @@ async fn main() -> Result<()> {
     let token = env::var("GITHUB_TOKEN")
         .expect("You must set the GITHUB_TOKEN env var when running this program");
     let client = Client::builder()
-        .user_agent(format!("autarch-profiler-generator-om/{}", VERSION))
+        .user_agent(format!("andreasOM-profiler-generator/{}", VERSION))
         .default_headers(
             std::iter::once((
                 reqwest::header::AUTHORIZATION,
-                reqwest::header::HeaderValue::from_str(&format!("Bearer {}", token)).unwrap(),
+                reqwest::header::HeaderValue::from_str(&format!("Bearer {}", token))
+                    .map_err(|e| anyhow::anyhow!("Invalid authorization header: {}", e))?,
             ))
             .collect(),
         )
@@ -194,22 +195,25 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
         };
         let resp = post_graphql::<UserReposQuery, _>(client, API_URL, vars).await?;
         tracing::debug!("{resp:#?}");
-//        todo!("---");
 
-        let user = resp.data.unwrap().user.unwrap();
+        let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in GraphQL response"))?;
+        let user = data.user.ok_or_else(|| anyhow::anyhow!("No user in GraphQL response"))?;
+
         if stats.created_at.is_empty() {
             stats.created_at = user.created_at;
         }
 
-        collect_user_repo_stats(
-            &mut stats,
-            user.repositories
+        let nodes = user.repositories
                 .nodes
-                .unwrap()
+                .ok_or_else(|| anyhow::anyhow!("No repository nodes in response"))?;
+
+        let owned_repos: Vec<_> = nodes
                 .into_iter()
-                .filter(|r| r.as_ref().unwrap().owner.login == MY_LOGIN)
-                .collect::<Vec<_>>(),
-        )?;
+                .filter_map(|r| r)
+                .filter(|r| r.owner.login == MY_LOGIN)
+                .collect();
+
+        collect_user_repo_stats(&mut stats, owned_repos)?;
 
         if user.repositories.page_info.has_next_page {
             after = user.repositories.page_info.end_cursor;
@@ -247,9 +251,9 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
 
 fn collect_user_repo_stats(
     stats: &mut UserAndRepoStats,
-    repos: Vec<Option<user_repos_query::ReposNodes>>,
+    repos: Vec<user_repos_query::ReposNodes>,
 ) -> Result<()> {
-    for repo in repos.into_iter().map(|r| r.unwrap()) {
+    for repo in repos {
         if repo.is_archived || repo.is_disabled || repo.is_empty || repo.is_private {
             continue;
         }
@@ -262,29 +266,31 @@ fn collect_user_repo_stats(
 
         stats.owned_repos += 1;
 
-        let lang_sizes = repo
-            .languages
-            .as_ref()
-            .unwrap()
+        let languages = match repo.languages.as_ref() {
+            Some(langs) => langs,
+            None => continue, // Skip repos with no language data
+        };
+
+        let lang_sizes: Vec<_> = languages
             .edges
             .as_ref()
-            .unwrap()
-            .iter()
-            .map(|e| e.as_ref().unwrap().size)
-            .collect::<Vec<_>>();
-        let lang_names_and_colors = repo
-            .languages
-            .as_ref()
-            .unwrap()
+            .map(|edges| {
+                edges.iter()
+                    .filter_map(|e| e.as_ref().map(|edge| edge.size))
+                    .collect()
+            })
+            .unwrap_or_default();
+
+        let lang_names_and_colors: Vec<_> = languages
             .nodes
             .as_ref()
-            .unwrap()
-            .iter()
-            .map(|l| {
-                let l = l.as_ref().unwrap();
-                (l.name.as_str(), l.color.as_deref())
+            .map(|nodes| {
+                nodes.iter()
+                    .filter_map(|l| l.as_ref().map(|lang| (lang.name.as_str(), lang.color.as_deref())))
+                    .collect()
             })
-            .collect::<Vec<_>>();
+            .unwrap_or_default();
+
         collect_language_stats(
             &mut stats.all_time_languages,
             repo.name_with_owner.as_str(),
@@ -292,25 +298,30 @@ fn collect_user_repo_stats(
             &lang_names_and_colors,
         );
 
-        let last_commit = repo.refs.as_ref().unwrap().nodes.as_ref().unwrap()[0]
-            .as_ref()
-            .unwrap()
-            .target
-            .as_ref()
-            .unwrap();
-        let pushed_date = match last_commit {
-            user_repos_query::ReposNodesRefsNodesTarget::Commit(c) => c.pushed_date.as_ref(),
-            _ => None,
+        let refs = match repo.refs.as_ref() {
+            Some(r) => r,
+            None => continue, // Skip repos with no refs
         };
-        // This seems to be none in cases where the last commit in the repo is
-        // from before I moved to GitHub, which means the repo is not live,
-        // since I'm pretty sure there's nothing I've moved to GitHub in the
-        // last 2 years or less.
-        if pushed_date.is_none() {
-            continue;
-        }
 
-        let pushed_date = DateTime::parse_from_rfc3339(pushed_date.unwrap())?.with_timezone(&Utc);
+        let nodes = match refs.nodes.as_ref() {
+            Some(n) if !n.is_empty() => n,
+            _ => continue, // Skip repos with no commits
+        };
+
+        let target = match nodes[0].as_ref().and_then(|n| n.target.as_ref()) {
+            Some(t) => t,
+            None => continue,
+        };
+
+        let pushed_date = match target {
+            user_repos_query::ReposNodesRefsNodesTarget::Commit(c) => match c.pushed_date.as_ref() {
+                Some(d) => d,
+                None => continue, // Skip commits without pushed_date
+            },
+            _ => continue,
+        };
+
+        let pushed_date = DateTime::parse_from_rfc3339(pushed_date)?.with_timezone(&Utc);
         if pushed_date < *FILTER_DATE {
             continue;
         }
@@ -393,7 +404,11 @@ fn collect_organization_repo_stats(
             &lang_names_and_colors,
         );
 
-        let last_commit = repo.refs.as_ref().unwrap().nodes.as_ref().unwrap()[0]
+        let nodes = repo.refs.as_ref().unwrap().nodes.as_ref().unwrap();
+        if nodes.is_empty() {
+            continue;
+        }
+        let last_commit = nodes[0]
             .as_ref()
             .unwrap()
             .target
@@ -466,15 +481,16 @@ fn collect_language_stats(
     lang_names_and_colors: &[(&str, Option<&str>)],
 ) {
     if lang_sizes.len() != lang_names_and_colors.len() {
-        panic!(
-            "language sizes and names differ in length: {} != {} for {}",
+        tracing::warn!(
+            "language sizes and names differ in length: {} != {} for {}; skipping",
             lang_sizes.len(),
             lang_names_and_colors.len(),
             repo_name,
         );
+        return;
     }
     if !lang_sizes.is_empty() && !REPOS_TO_IGNORE_FOR_LANGUAGE_STATS.contains(&repo_name) {
-        for i in 0..lang_sizes.len() - 1 {
+        for i in 0..lang_sizes.len() {
             let lang = match (repo_name, lang_names_and_colors[i].0) {
                 // This is really XS, not C (although arguably, XS is just C).
                 //("houseabsolute/File-LibMagic", "C") => "XS",
@@ -505,7 +521,10 @@ fn language_color<'a, 'b>(lang: &'a str, color: Option<&'b str>) -> &'b str {
         None => match lang {
             "Perl 6" => "#00A9E0",
             "XS" => "#021c9e", // a darker blue than Perl,
-            _ => panic!("No color for {lang}"),
+            _ => {
+                tracing::warn!("No color defined for language '{}'; using default gray", lang);
+                "#808080" // Default gray color
+            }
         },
     }
 }
@@ -555,9 +574,13 @@ fn top_languages(languages: &HashMap<String, (String, i64)>) -> Vec<LanguageStat
             tracing::debug!("Skipping language {name} with total percentage of {pct}");
             continue;
         }
+        let color = colors.get(name).copied().unwrap_or_else(|| {
+            tracing::warn!("No color found for language '{}'; using default", name);
+            "#808080"
+        });
         top.push(LanguageStat {
             name,
-            color: *colors.get(name).unwrap(),
+            color,
             percentage: pct.round() as i64,
             bytes: human_bytes(sum as f64),
         })
@@ -573,9 +596,8 @@ async fn issue_and_pr_stats(client: &Client) -> Result<IssueAndPrStats> {
         post_graphql::<IssuesAndPrsQuery, _>(client, API_URL, issues_and_prs_query::Variables {})
             .await?;
     tracing::debug!("{resp:#?}");
-//    todo!("---");
 
-    let data = resp.data.unwrap();
+    let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in issues/PRs GraphQL response"))?;
     Ok(IssueAndPrStats {
         issues_created: data.issues_created.issue_count,
         issues_closed: data.issues_closed.issue_count,
