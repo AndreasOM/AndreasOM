@@ -1,29 +1,54 @@
-
 # Andreas "anti" Neukoetter
 
-I am Andreas, but friends call me Anti.  
-I am a fulltime game developer.  
-I currently work as the CTO of ...  
-In my day job I mostly spend my time between meetings/calls, and spreadsheets.  
-In my spare time I love to code.  
+I am Andreas, but friends call me Anti.
+I am a fulltime game developer.
+I currently work as the CTO of ...
+In my day job I mostly spend my time between meetings/calls, and spreadsheets.
+In my spare time I love to code.
 
 ## Repo Stats
-- **0 repos with commits in the last two years**
+- **24 repos with commits in the last two years**
 - 92 total repos
   - 26 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-11-25
+- [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2025-11-25
+- [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2025-11-23
+- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-11-20
+- [AndreasOM/omg-lib](https://github.com/AndreasOM/omg-lib) on 2025-11-16
+- [AndreasOM/om-snapper](https://github.com/AndreasOM/om-snapper) on 2025-10-13
+- [AndreasOM/omr-bumper](https://github.com/AndreasOM/omr-bumper) on 2025-10-13
+- [AndreasOM/godot-export-test](https://github.com/AndreasOM/godot-export-test) on 2025-07-04
+- [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2025-06-22
+- [AndreasOM/fiiish-v3-unity](https://github.com/AndreasOM/fiiish-v3-unity) on 2025-06-16
 
 
 ## Most Starred
+- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) - 3 stars
+- [AndreasOM/oml-game](https://github.com/AndreasOM/oml-game) - 2 stars
+- [AndreasOM/omt](https://github.com/AndreasOM/omt) - 2 stars
+- [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) - 2 stars
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) - 1 stars
 
 
 ## Most Forked
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) - 0 forks
+- [AndreasOM/chessboard-generator](https://github.com/AndreasOM/chessboard-generator) - 0 forks
+- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) - 0 forks
+- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) - 0 forks
+- [AndreasOM/fiiish-v3-unity](https://github.com/AndreasOM/fiiish-v3-unity) - 0 forks
 
 
 ## Past Two Years Language Stats
+- Rust: 49%, 1 MiB
+- GDScript: 34%, 747 KiB
+- GLSL: 4%, 85.5 KiB
+- C#: 4%, 88.8 KiB
+- ShaderLab: 4%, 96.4 KiB
+- Shell: 1%, 27.1 KiB
 
 
 ## All-Time Language Stats
