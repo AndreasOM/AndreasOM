@@ -17,7 +17,7 @@ pub mod organization_repos_query {
     type ID = String;
     type DateTime = crate::gql_types::DateTime;
     type URI = crate::gql_types::URI;
-    #[derive(Serialize)]
+    #[derive(Serialize, Clone)]
     pub struct Variables {
         pub login: String,
         pub after: Option<String>,
@@ -160,7 +160,7 @@ pub mod user_repos_query {
     type ID = String;
     type DateTime = crate::gql_types::DateTime;
     type URI = crate::gql_types::URI;
-    #[derive(Serialize)]
+    #[derive(Serialize, Clone)]
     pub struct Variables {
         pub login: String,
         pub after: Option<String>,
@@ -303,7 +303,7 @@ pub mod issues_and_prs_query {
     type Int = i64;
     #[allow(dead_code)]
     type ID = String;
-    #[derive(Serialize)]
+    #[derive(Serialize, Clone)]
     pub struct Variables;
     #[derive(Deserialize, Debug)]
     pub struct ResponseData {

@@ -19,6 +19,7 @@ use once_cell::sync::Lazy;
 use reqwest::Client;
 use rss::Channel;
 use serde_derive::Serialize;
+use serde_json;
 use std::{cmp::Ordering, collections::HashMap, env, fs::File, io::Write, path::PathBuf};
 use tinytemplate::TinyTemplate;
 
@@ -184,6 +185,101 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
+async fn graphql_with_retry<Q: graphql_client::GraphQLQuery>(
+    client: &Client,
+    url: &str,
+    variables: Q::Variables,
+) -> Result<graphql_client::Response<Q::ResponseData>>
+where
+    Q::Variables: serde::Serialize + Clone,
+{
+    const MAX_RETRIES: u32 = 4;
+    const INITIAL_DELAY_MS: u64 = 1000;
+
+    for attempt in 1..=MAX_RETRIES {
+        tracing::debug!("GraphQL request attempt {}/{}", attempt, MAX_RETRIES);
+
+        // Build the request body
+        let request_body = graphql_client::QueryBody {
+            variables: variables.clone(),
+            query: Q::build_query(variables.clone()).query,
+            operation_name: Q::build_query(variables.clone()).operation_name,
+        };
+
+        // Make the HTTP request directly to capture the raw response
+        let http_response = client
+            .post(url)
+            .json(&request_body)
+            .send()
+            .await;
+
+        match http_response {
+            Ok(response) => {
+                let status = response.status();
+                tracing::debug!("HTTP response status: {}", status);
+
+                // Get the raw response text
+                let response_text = match response.text().await {
+                    Ok(text) => text,
+                    Err(e) => {
+                        tracing::error!("Failed to read response body: {}", e);
+                        if attempt < MAX_RETRIES {
+                            let delay_ms = INITIAL_DELAY_MS * 2u64.pow(attempt - 1);
+                            tracing::warn!("Retrying in {}ms...", delay_ms);
+                            tokio::time::sleep(tokio::time::Duration::from_millis(delay_ms)).await;
+                            continue;
+                        } else {
+                            return Err(anyhow::anyhow!("Failed to read response body: {}", e));
+                        }
+                    }
+                };
+
+                // Try to parse as GraphQL response
+                match serde_json::from_str::<graphql_client::Response<Q::ResponseData>>(&response_text) {
+                    Ok(graphql_response) => {
+                        tracing::debug!("GraphQL request succeeded on attempt {}", attempt);
+                        return Ok(graphql_response);
+                    }
+                    Err(e) => {
+                        tracing::error!("GraphQL request attempt {}/{} failed to parse response", attempt, MAX_RETRIES);
+                        tracing::error!("Parse error: {}", e);
+                        tracing::error!("HTTP status: {}", status);
+                        tracing::error!("Full response body:\n{}", response_text);
+
+                        if attempt < MAX_RETRIES {
+                            let delay_ms = INITIAL_DELAY_MS * 2u64.pow(attempt - 1);
+                            tracing::warn!("Retrying in {}ms...", delay_ms);
+                            tokio::time::sleep(tokio::time::Duration::from_millis(delay_ms)).await;
+                        } else {
+                            tracing::error!("All {} retry attempts exhausted", MAX_RETRIES);
+                            return Err(anyhow::anyhow!(
+                                "GraphQL request failed after {} attempts. Last error: {}. HTTP status: {}",
+                                MAX_RETRIES,
+                                e,
+                                status
+                            ));
+                        }
+                    }
+                }
+            }
+            Err(e) => {
+                tracing::error!("HTTP request attempt {}/{} failed: {}", attempt, MAX_RETRIES, e);
+
+                if attempt < MAX_RETRIES {
+                    let delay_ms = INITIAL_DELAY_MS * 2u64.pow(attempt - 1);
+                    tracing::warn!("Retrying in {}ms...", delay_ms);
+                    tokio::time::sleep(tokio::time::Duration::from_millis(delay_ms)).await;
+                } else {
+                    tracing::error!("All {} retry attempts exhausted", MAX_RETRIES);
+                    return Err(anyhow::anyhow!("HTTP request failed after {} attempts: {}", MAX_RETRIES, e));
+                }
+            }
+        }
+    }
+
+    unreachable!("Loop should always return before reaching here");
+}
+
 async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
     let mut stats = UserAndRepoStats::default();
     let mut after = None;
@@ -194,11 +290,7 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
             after,
         };
         tracing::debug!("Making GraphQL request to {} for user {}", API_URL, MY_LOGIN);
-        let resp = post_graphql::<UserReposQuery, _>(client, API_URL, vars).await
-            .map_err(|e| {
-                tracing::error!("GraphQL request failed: {}", e);
-                anyhow::anyhow!("Failed to fetch user repos: {}", e)
-            })?;
+        let resp = graphql_with_retry::<UserReposQuery>(client, API_URL, vars).await?;
         tracing::debug!("{resp:#?}");
 
         let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in GraphQL response"))?;
@@ -222,6 +314,8 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
 
         if user.repositories.page_info.has_next_page {
             after = user.repositories.page_info.end_cursor;
+            // Small delay between paginated requests to avoid rate limiting
+            tokio::time::sleep(tokio::time::Duration::from_millis(200)).await;
         } else {
             break;
         }
@@ -597,9 +691,12 @@ fn top_languages(languages: &HashMap<String, (String, i64)>) -> Vec<LanguageStat
 
 async fn issue_and_pr_stats(client: &Client) -> Result<IssueAndPrStats> {
     tracing::info!("Getting issue and pr data");
-    let resp =
-        post_graphql::<IssuesAndPrsQuery, _>(client, API_URL, issues_and_prs_query::Variables {})
-            .await?;
+    let resp = graphql_with_retry::<IssuesAndPrsQuery>(
+        client,
+        API_URL,
+        issues_and_prs_query::Variables {},
+    )
+    .await?;
     tracing::debug!("{resp:#?}");
 
     let data = resp.data.ok_or_else(|| anyhow::anyhow!("No data in issues/PRs GraphQL response"))?;
