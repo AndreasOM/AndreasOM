@@ -31,9 +31,9 @@ This excludes archived, disabled, empty, and private repos.
 - GDScript: 22%, 747 KB
 - ShaderLab: 5%, 159.5 KB
 - C: 4%, 149.9 KB
+- C++: 3%, 98.8 KB
 - GLSL: 3%, 96.3 KB
 - C#: 3%, 115.1 KB
-- C++: 3%, 98.8 KB
 - Shell: 2%, 72.6 KB
 - Objective-C: 2%, 57.6 KB
 
