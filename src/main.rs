@@ -9,15 +9,13 @@ pub(crate) mod gql_types {
 use anyhow::Result;
 use chrono::{DateTime, Datelike, Utc};
 use github_queries::{
-    issues_and_prs_query, organization_repos_query, user_repos_query, IssuesAndPrsQuery,
-    OrganizationReposQuery, UserReposQuery,
+    issues_and_prs_query, user_repos_query, IssuesAndPrsQuery, UserReposQuery,
 };
 use graphql_client::reqwest::post_graphql;
 use human_bytes::human_bytes;
 use itertools::Itertools;
 use once_cell::sync::Lazy;
 use reqwest::Client;
-use rss::Channel;
 use serde_derive::Serialize;
 use serde_json;
 use std::{cmp::Ordering, collections::HashMap, env, fs::File, io::Write, path::PathBuf};
@@ -71,13 +69,6 @@ struct IssueAndPrStats {
     prs_merged: i64,
 }
 
-#[derive(Debug, Serialize)]
-struct BlogPost {
-    title: String,
-    date: String,
-    url: String,
-}
-
 #[derive(Serialize)]
 struct Context<'a> {
     user_and_repo_stats: &'a UserAndRepoStats,
@@ -85,7 +76,6 @@ struct Context<'a> {
     issue_and_pr_stats: IssueAndPrStats,
     top_all_time_languages: Vec<LanguageStat<'a>>,
     top_recent_languages: Vec<LanguageStat<'a>>,
-    blog_posts: Vec<BlogPost>,
 }
 
 const README_TEMPLATE: &str = r#"
@@ -162,9 +152,6 @@ async fn main() -> Result<()> {
     tracing::debug!("{top_recent_languages:#?}");
     let issue_and_pr_stats = issue_and_pr_stats(&client).await?;
     tracing::debug!("{issue_and_pr_stats:#?}");
-    let blog_posts = Vec::new();
-//    let blog_posts = blog_posts().await?;
-//    tracing::debug!("{blog_posts:#?}");
 
     let mut tt = TinyTemplate::new();
     tt.add_template("readme", README_TEMPLATE)?;
@@ -174,7 +161,6 @@ async fn main() -> Result<()> {
         issue_and_pr_stats,
         top_all_time_languages,
         top_recent_languages,
-        blog_posts,
     };
 
     let mut path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
@@ -320,31 +306,6 @@ async fn user_and_repo_stats(client: &Client) -> Result<UserAndRepoStats> {
             break;
         }
     }
-/*
-    after = None;
-    tracing::info!("Getting organization repos");
-    loop {
-        let vars = organization_repos_query::Variables {
-            login: "andreasOM".to_string(),
-            after,
-        };
-        let resp = post_graphql::<OrganizationReposQuery, _>(client, API_URL, vars).await?;
-        tracing::debug!("{resp:#?}");
-
-        match resp.data.unwrap().organization {
-            Some( organization ) => {
-                collect_organization_repo_stats(&mut stats, organization.repositories.nodes.unwrap())?;
-
-                if organization.repositories.page_info.has_next_page {
-                    after = organization.repositories.page_info.end_cursor;
-                } else {
-                    break;
-                }
-            },
-            None => {},
-        }
-    }
-*/
     Ok(stats)
 }
 
@@ -421,114 +382,6 @@ fn collect_user_repo_stats(
         };
 
         let pushed_date = DateTime::parse_from_rfc3339(pushed_date)?.with_timezone(&Utc);
-        if pushed_date < *FILTER_DATE {
-            continue;
-        }
-
-        collect_language_stats(
-            &mut stats.recent_languages,
-            repo.name_with_owner.as_str(),
-            &lang_sizes,
-            &lang_names_and_colors,
-        );
-
-        stats.live_repos += 1;
-
-        stats.repos.push(MyRepo {
-            full_name: repo.name_with_owner,
-            url: repo.url,
-            fork_count: repo.fork_count,
-            stargazer_count: repo.stargazer_count,
-            pushed_date: pushed_date.format("%Y-%m-%d").to_string(),
-        });
-    }
-
-    Ok(())
-}
-
-// It's gross that this is a near copy of the user stats fn, but there are
-// only two ways to avoid that which I can think of, and the both suck.
-//
-// One way is to have the two ReposNodes structs implement a common trait, and
-// then have a single fn that accepts Vec<Option<impl NodeTrait>>. But that
-// means that all data in the repo is gated behind functions, and it makes
-// moving data out of the repo more complicated.
-//
-// The other way is to implement some sort of macro that generates two copies
-// of this fn.
-fn collect_organization_repo_stats(
-    stats: &mut UserAndRepoStats,
-    repos: Vec<Option<organization_repos_query::ReposNodes>>,
-) -> Result<()> {
-    for repo in repos.into_iter().map(|r| r.unwrap()) {
-        if repo.is_archived || repo.is_disabled || repo.is_empty || repo.is_private {
-            continue;
-        }
-
-        stats.total_repos += 1;
-        if repo.is_fork {
-            stats.forked_repos += 1;
-            continue;
-        }
-
-        stats.owned_repos += 1;
-
-        let lang_sizes = repo
-            .languages
-            .as_ref()
-            .unwrap()
-            .edges
-            .as_ref()
-            .unwrap()
-            .iter()
-            .map(|e| e.as_ref().unwrap().size)
-            .collect::<Vec<_>>();
-        let lang_names_and_colors = repo
-            .languages
-            .as_ref()
-            .unwrap()
-            .nodes
-            .as_ref()
-            .unwrap()
-            .iter()
-            .map(|l| {
-                let l = l.as_ref().unwrap();
-                (l.name.as_str(), l.color.as_deref())
-            })
-            .collect::<Vec<_>>();
-        collect_language_stats(
-            &mut stats.all_time_languages,
-            repo.name_with_owner.as_str(),
-            &lang_sizes,
-            &lang_names_and_colors,
-        );
-
-        let nodes = repo.refs.as_ref().unwrap().nodes.as_ref().unwrap();
-        if nodes.is_empty() {
-            continue;
-        }
-        let last_commit = nodes[0]
-            .as_ref()
-            .unwrap()
-            .target
-            .as_ref()
-            .unwrap();
-        let pushed_date = match last_commit {
-            organization_repos_query::ReposNodesRefsNodesTarget::Commit(c) => {
-                c.pushed_date.as_ref()
-            }
-            _ => None,
-        };
-        // This seems to be none in cases where the last commit in the repo is
-        // from before I moved to GitHub, which means the repo is not live,
-        // since I'm pretty sure there's nothing I've moved to GitHub in the
-        // last 2 years or less.
-        if pushed_date.is_none() {
-            continue;
-        }
-
-        let pushed_date =
-            DateTime::parse_from_rfc3339(pushed_date.as_ref().unwrap())?.with_timezone(&Utc);
         if pushed_date < *FILTER_DATE {
             continue;
         }
@@ -708,24 +561,3 @@ async fn issue_and_pr_stats(client: &Client) -> Result<IssueAndPrStats> {
     })
 }
 
-async fn blog_posts() -> Result<Vec<BlogPost>> {
-    tracing::info!("Getting blog feed");
-    let content = reqwest::get("https://blog.urth.org/index.xml")
-        .await?
-        .bytes()
-        .await?;
-    let mut channel = Channel::read_from(&content[..])?;
-    Ok(channel
-        .items
-        .splice(0..5, None)
-        .into_iter()
-        .map(|i| {
-            let dt = DateTime::parse_from_rfc2822(i.pub_date().unwrap())?;
-            Ok(BlogPost {
-                title: i.title.unwrap(),
-                date: dt.date().format("%Y-%m-%d").to_string(),
-                url: i.link.unwrap(),
-            })
-        })
-        .collect::<Result<Vec<_>>>()?)
-}
