@@ -340,27 +340,9 @@ fn collect_user_repo_stats(
             &lang_names_and_colors,
         );
 
-        let refs = match repo.refs.as_ref() {
-            Some(r) => r,
-            None => continue, // Skip repos with no refs
-        };
-
-        let nodes = match refs.nodes.as_ref() {
-            Some(n) if !n.is_empty() => n,
-            _ => continue, // Skip repos with no commits
-        };
-
-        let target = match nodes[0].as_ref().and_then(|n| n.target.as_ref()) {
-            Some(t) => t,
-            None => continue,
-        };
-
-        let pushed_date = match target {
-            user_repos_query::ReposNodesRefsNodesTarget::Commit(c) => match c.pushed_date.as_ref() {
-                Some(d) => d,
-                None => continue, // Skip commits without pushed_date
-            },
-            _ => continue,
+        let pushed_date = match repo.pushed_at.as_ref() {
+            Some(d) => d,
+            None => continue, // Skip repos without pushed_at
         };
 
         let pushed_date = DateTime::parse_from_rfc3339(pushed_date)?.with_timezone(&Utc);
