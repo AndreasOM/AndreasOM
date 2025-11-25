@@ -32,8 +32,8 @@ This excludes archived, disabled, empty, and private repos.
 - ShaderLab: 5%, 159.5 KiB
 - C: 4%, 149.9 KiB
 - GLSL: 3%, 96.3 KiB
-- C++: 3%, 98.8 KiB
 - C#: 3%, 115.1 KiB
+- C++: 3%, 98.8 KiB
 - Shell: 2%, 72.6 KiB
 - Objective-C: 2%, 57.6 KiB
 
