@@ -2,7 +2,8 @@
 
 I am Andreas, but friends call me Anti.
 I am a fulltime game developer.
-I currently work as the CTO of ...
+I currently work as the Head of Development of NARC,
+and do some freelance consulting.
 In my day job I mostly spend my time between meetings/calls, and spreadsheets.
 In my spare time I love to code.
 
@@ -34,13 +35,6 @@ This excludes archived, disabled, empty, and private repos.
 - [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) - 1 stars
 
 
-## Most Forked
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) - 0 forks
-- [AndreasOM/chessboard-generator](https://github.com/AndreasOM/chessboard-generator) - 0 forks
-- [AndreasOM/fiiish-rs](https://github.com/AndreasOM/fiiish-rs) - 0 forks
-- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) - 0 forks
-- [AndreasOM/fiiish-v3-unity](https://github.com/AndreasOM/fiiish-v3-unity) - 0 forks
-
 
 ## Past Two Years Language Stats
 - Rust: 49%, 1 MiB
@@ -56,9 +50,9 @@ This excludes archived, disabled, empty, and private repos.
 - GDScript: 22%, 747 KiB
 - ShaderLab: 5%, 159.5 KiB
 - C: 4%, 149.9 KiB
-- GLSL: 3%, 96.3 KiB
 - C#: 3%, 115.1 KiB
+- GLSL: 3%, 96.3 KiB
 - C++: 3%, 98.8 KiB
-- Shell: 2%, 72.6 KiB
 - Objective-C: 2%, 57.6 KiB
+- Shell: 2%, 72.6 KiB
 
