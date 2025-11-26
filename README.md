@@ -39,9 +39,9 @@ This excludes archived, disabled, empty, and private repos.
 ## Past Two Years Language Stats
 - Rust: 49%, 1 MiB
 - GDScript: 34%, 747 KiB
-- GLSL: 4%, 85.5 KiB
 - C#: 4%, 88.8 KiB
 - ShaderLab: 4%, 96.4 KiB
+- GLSL: 4%, 85.5 KiB
 - Shell: 1%, 27.1 KiB
 
 
