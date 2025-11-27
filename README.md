@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-11-25
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-11-26
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2025-11-25
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2025-11-23
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-11-20
@@ -50,9 +50,9 @@ This excludes archived, disabled, empty, and private repos.
 - GDScript: 22%, 747 KiB
 - ShaderLab: 5%, 159.5 KiB
 - C: 4%, 149.9 KiB
-- C#: 3%, 115.1 KiB
-- GLSL: 3%, 96.3 KiB
 - C++: 3%, 98.8 KiB
-- Objective-C: 2%, 57.6 KiB
+- GLSL: 3%, 96.3 KiB
+- C#: 3%, 115.1 KiB
 - Shell: 2%, 72.6 KiB
+- Objective-C: 2%, 57.6 KiB
 
