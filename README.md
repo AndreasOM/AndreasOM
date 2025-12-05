@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-12-03
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-12-04
 - [AndreasOM/bluelu](https://github.com/AndreasOM/bluelu) on 2025-11-30
 - [AndreasOM/LowTexPal](https://github.com/AndreasOM/LowTexPal) on 2025-11-28
 - [AndreasOM/andreasom.github.com](https://github.com/AndreasOM/andreasom.github.com) on 2025-11-27
@@ -39,8 +39,8 @@ This excludes archived, disabled, empty, and private repos.
 ## Past Two Years Language Stats
 - Rust: 49%, 1.1 MiB
 - GDScript: 33%, 747 KiB
-- C#: 4%, 88.8 KiB
 - GLSL: 4%, 85.5 KiB
+- C#: 4%, 88.8 KiB
 - ShaderLab: 4%, 96.4 KiB
 - Shell: 3%, 57.3 KiB
 
