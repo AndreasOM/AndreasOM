@@ -15,8 +15,8 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-12-19
-- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-12-19
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2025-12-20
+- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-12-20
 - [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2025-12-17
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2025-12-07
 - [AndreasOM/bluelu](https://github.com/AndreasOM/bluelu) on 2025-11-30
@@ -38,16 +38,16 @@ This excludes archived, disabled, empty, and private repos.
 
 ## Past Two Years Language Stats
 - Rust: 49%, 1.1 MiB
-- GDScript: 33%, 756.3 KiB
+- GDScript: 33%, 756.5 KiB
+- C#: 4%, 88.8 KiB
 - GLSL: 4%, 85.5 KiB
 - ShaderLab: 4%, 96.4 KiB
-- C#: 4%, 88.8 KiB
 - Shell: 3%, 67 KiB
 
 
 ## All-Time Language Stats
 - Rust: 56%, 1.7 MiB
-- GDScript: 25%, 756.3 KiB
+- GDScript: 25%, 756.5 KiB
 - ShaderLab: 5%, 159.5 KiB
 - C#: 4%, 115.1 KiB
 - Shell: 3%, 85.4 KiB
