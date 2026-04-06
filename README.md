@@ -9,13 +9,13 @@ In my spare time I love to code.
 
 ## Repo Stats
 - **25 repos with commits in the last two years**
-- 63 total repos
-  - 14 are forks
+- 64 total repos
+  - 15 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-04-04
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-04-05
 - [AndreasOM/omg-lib](https://github.com/AndreasOM/omg-lib) on 2025-12-27
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-12-20
 - [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2025-12-17
@@ -40,8 +40,8 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 43%, 866.6 KiB
 - GDScript: 37%, 758.4 KiB
 - ShaderLab: 5%, 96.4 KiB
-- C#: 4%, 88.8 KiB
 - GLSL: 4%, 81.6 KiB
+- C#: 4%, 88.8 KiB
 - Shell: 3%, 52.3 KiB
 
 
@@ -50,6 +50,6 @@ This excludes archived, disabled, empty, and private repos.
 - GDScript: 25%, 758.4 KiB
 - ShaderLab: 5%, 159.5 KiB
 - C#: 4%, 115.1 KiB
-- Shell: 3%, 85.4 KiB
 - GLSL: 3%, 96.3 KiB
+- Shell: 3%, 85.4 KiB
 
