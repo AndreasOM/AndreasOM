@@ -8,14 +8,14 @@ In my day job I mostly spend my time between meetings/calls, and spreadsheets.
 In my spare time I love to code.
 
 ## Repo Stats
-- **24 repos with commits in the last two years**
+- **23 repos with commits in the last two years**
 - 64 total repos
   - 13 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-06-14
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-06-15
 - [AndreasOM/anti666tv-overlay-godot](https://github.com/AndreasOM/anti666tv-overlay-godot) on 2026-06-06
 - [AndreasOM/omg-lib](https://github.com/AndreasOM/omg-lib) on 2025-12-27
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-12-20
@@ -37,7 +37,7 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- Rust: 44%, 862.7 KiB
+- Rust: 44%, 858.2 KiB
 - GDScript: 39%, 766.2 KiB
 - C#: 5%, 88.8 KiB
 - ShaderLab: 5%, 96.4 KiB
