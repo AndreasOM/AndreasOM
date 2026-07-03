@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-07-01
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-07-02
 - [AndreasOM/anti666tv-overlay-godot](https://github.com/AndreasOM/anti666tv-overlay-godot) on 2026-06-27
 - [AndreasOM/omg-lib](https://github.com/AndreasOM/omg-lib) on 2025-12-27
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-12-20
@@ -50,6 +50,6 @@ This excludes archived, disabled, empty, and private repos.
 - GDScript: 25%, 767.2 KiB
 - ShaderLab: 5%, 159.5 KiB
 - C#: 4%, 115.1 KiB
-- GLSL: 3%, 96.3 KiB
 - Shell: 3%, 85.4 KiB
+- GLSL: 3%, 96.3 KiB
 
