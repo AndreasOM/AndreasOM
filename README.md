@@ -15,10 +15,10 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-07-20
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-07-21
+- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2026-07-21
 - [AndreasOM/anti666tv-overlay-godot](https://github.com/AndreasOM/anti666tv-overlay-godot) on 2026-07-19
 - [AndreasOM/omg-lib](https://github.com/AndreasOM/omg-lib) on 2025-12-27
-- [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2025-12-20
 - [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2025-12-17
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2025-12-07
 - [AndreasOM/bluelu](https://github.com/AndreasOM/bluelu) on 2025-11-30
@@ -37,7 +37,7 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- GDScript: 46%, 767.2 KiB
+- GDScript: 46%, 767.9 KiB
 - Rust: 35%, 590.6 KiB
 - ShaderLab: 6%, 96.4 KiB
 - C#: 5%, 88.8 KiB
@@ -47,7 +47,7 @@ This excludes archived, disabled, empty, and private repos.
 
 ## All-Time Language Stats
 - Rust: 56%, 1.7 MiB
-- GDScript: 25%, 767.2 KiB
+- GDScript: 25%, 767.9 KiB
 - ShaderLab: 5%, 159.5 KiB
 - C#: 4%, 115.1 KiB
 - Shell: 3%, 85.4 KiB
