@@ -15,7 +15,8 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-08-22
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-08-23
+- [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2026-08-23
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2026-07-30
 - [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2026-07-24
 - [AndreasOM/anti666tv-overlay-godot](https://github.com/AndreasOM/anti666tv-overlay-godot) on 2026-07-19
@@ -24,7 +25,6 @@ This excludes archived, disabled, empty, and private repos.
 - [AndreasOM/bluelu](https://github.com/AndreasOM/bluelu) on 2025-11-30
 - [AndreasOM/LowTexPal](https://github.com/AndreasOM/LowTexPal) on 2025-11-28
 - [AndreasOM/andreasom.github.com](https://github.com/AndreasOM/andreasom.github.com) on 2025-11-27
-- [AndreasOM/anti666-random-experiments](https://github.com/AndreasOM/anti666-random-experiments) on 2025-11-27
 
 
 ## Most Starred
@@ -37,19 +37,18 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- GDScript: 46%, 768.7 KiB
-- Rust: 35%, 590.6 KiB
-- ShaderLab: 6%, 96.4 KiB
-- C#: 5%, 88.8 KiB
+- Rust: 46%, 941.9 KiB
+- GDScript: 37%, 768.7 KiB
+- ShaderLab: 5%, 96.4 KiB
+- C#: 4%, 88.8 KiB
 - Shell: 3%, 51.9 KiB
-- HLSL: 1%, 19.5 KiB
 
 
 ## All-Time Language Stats
-- Rust: 56%, 1.7 MiB
-- GDScript: 25%, 768.7 KiB
+- Rust: 60%, 2 MiB
+- GDScript: 22%, 768.7 KiB
 - ShaderLab: 5%, 159.5 KiB
-- C#: 4%, 115.1 KiB
-- GLSL: 3%, 96.3 KiB
-- Shell: 3%, 85.4 KiB
+- C#: 3%, 115.1 KiB
+- GLSL: 3%, 104.2 KiB
+- Shell: 2%, 85.4 KiB
 
