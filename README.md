@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-08-29
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-08-30
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2026-08-27
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2026-07-30
 - [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2026-07-24
@@ -49,7 +49,7 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 60%, 2.1 MiB
 - GDScript: 22%, 768.7 KiB
 - ShaderLab: 5%, 159.5 KiB
-- C#: 3%, 115.1 KiB
 - GLSL: 3%, 105 KiB
+- C#: 3%, 115.1 KiB
 - Shell: 2%, 85.4 KiB
 
