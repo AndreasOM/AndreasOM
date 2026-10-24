@@ -8,14 +8,15 @@ In my day job I mostly spend my time between meetings/calls, and spreadsheets.
 In my spare time I love to code.
 
 ## Repo Stats
-- **20 repos with commits in the last two years**
-- 64 total repos
+- **21 repos with commits in the last two years**
+- 65 total repos
   - 13 are forks
 
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-10-22
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-10-23
+- [AndreasOM/sluice-release](https://github.com/AndreasOM/sluice-release) on 2026-10-23
 - [AndreasOM/shader-crusher](https://github.com/AndreasOM/shader-crusher) on 2026-08-27
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2026-07-30
 - [AndreasOM/omg_lifecycle_plugin_ios](https://github.com/AndreasOM/omg_lifecycle_plugin_ios) on 2026-07-24
@@ -24,7 +25,6 @@ This excludes archived, disabled, empty, and private repos.
 - [AndreasOM/omt](https://github.com/AndreasOM/omt) on 2025-12-07
 - [AndreasOM/bluelu](https://github.com/AndreasOM/bluelu) on 2025-11-30
 - [AndreasOM/LowTexPal](https://github.com/AndreasOM/LowTexPal) on 2025-11-28
-- [AndreasOM/andreasom.github.com](https://github.com/AndreasOM/andreasom.github.com) on 2025-11-27
 
 
 ## Most Starred
@@ -49,7 +49,7 @@ This excludes archived, disabled, empty, and private repos.
 - Rust: 60%, 2.1 MiB
 - GDScript: 22%, 768.7 KiB
 - ShaderLab: 5%, 159.5 KiB
-- C#: 3%, 115.1 KiB
 - GLSL: 3%, 105 KiB
+- C#: 3%, 115.1 KiB
 - Shell: 2%, 85.4 KiB
 
