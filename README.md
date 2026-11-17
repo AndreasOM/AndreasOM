@@ -15,7 +15,7 @@ In my spare time I love to code.
 This excludes archived, disabled, empty, and private repos.
 
 ## Repos with Recent Pushes
-- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-11-15
+- [AndreasOM/AndreasOM](https://github.com/AndreasOM/AndreasOM) on 2026-11-16
 - [AndreasOM/fiiish-v3](https://github.com/AndreasOM/fiiish-v3) on 2026-11-15
 - [AndreasOM/citadel](https://github.com/AndreasOM/citadel) on 2026-11-11
 - [AndreasOM/sluice-release](https://github.com/AndreasOM/sluice-release) on 2026-11-08
@@ -37,8 +37,8 @@ This excludes archived, disabled, empty, and private repos.
 
 
 ## Past Two Years Language Stats
-- GDScript: 41%, 768.7 KiB
 - Rust: 41%, 766.8 KiB
+- GDScript: 41%, 768.7 KiB
 - C#: 5%, 88.8 KiB
 - ShaderLab: 5%, 96.4 KiB
 - Shell: 3%, 51.9 KiB
